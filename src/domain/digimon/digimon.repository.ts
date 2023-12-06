@@ -21,4 +21,12 @@ export class DigimonRepository {
   findByLevel(digimonLevel: string): Promise<Digimon[]> {
     return this.digimonRepository.findBy({ level: digimonLevel });
   }
+
+  count(): Promise<number> {
+    return this.digimonRepository.count();
+  }
+
+  save(digimon): Promise<Digimon> {
+    return this.digimonRepository.save(digimon);
+  }
 }

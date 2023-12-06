@@ -1,13 +1,13 @@
-import { Column, Entity } from 'typeorm';
+import { Column, Entity, PrimaryColumn } from 'typeorm';
 
 @Entity()
 export class Digimon {
-  @Column()
+  @PrimaryColumn('varchar')
   name: string;
 
-  @Column()
+  @Column('varchar')
   img: string;
 
-  @Column()
+  @Column('varchar')
   level: string;
 }
