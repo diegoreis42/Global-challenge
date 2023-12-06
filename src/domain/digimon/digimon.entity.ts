@@ -1,4 +1,5 @@
 import { Column, Entity, PrimaryColumn } from 'typeorm';
+import { DigimonLevelsEnum } from './enums';
 
 @Entity()
 export class Digimon {
@@ -8,6 +9,6 @@ export class Digimon {
   @Column('varchar')
   img: string;
 
-  @Column('varchar')
-  level: string;
+  @Column({ type: 'enum', enum: DigimonLevelsEnum })
+  level: DigimonLevelsEnum;
 }

@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Digimon } from './digimon.entity';
 import { Repository } from 'typeorm';
+import { DigimonLevelsEnum } from './enums';
 
 @Injectable()
 export class DigimonRepository {
@@ -18,7 +19,7 @@ export class DigimonRepository {
     return this.digimonRepository.find();
   }
 
-  findByLevel(digimonLevel: string): Promise<Digimon[]> {
+  findByLevel(digimonLevel: DigimonLevelsEnum): Promise<Digimon[]> {
     return this.digimonRepository.findBy({ level: digimonLevel });
   }
 
