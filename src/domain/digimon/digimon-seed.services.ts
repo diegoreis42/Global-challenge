@@ -12,7 +12,7 @@ import { DigimonRepository } from './digimon.repository';
 import { AxiosError } from 'axios';
 
 @Injectable()
-export class DigimonService implements OnApplicationBootstrap {
+export class DigimonSeedService implements OnApplicationBootstrap {
   constructor(
     private readonly httpService: HttpService,
     private readonly digimonRepository: DigimonRepository,
@@ -42,7 +42,7 @@ export class DigimonService implements OnApplicationBootstrap {
       for (const digimon of data) {
         await this.digimonRepository.save(digimon);
       }
-      this.logger.log('Databse preenchido!');
+      this.logger.log('Database preenchido!');
     }
   }
 }
