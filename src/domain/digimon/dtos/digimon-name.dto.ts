@@ -1,4 +1,4 @@
-import { PickType } from '@nestjs/mapped-types';
+import { PickType } from '@nestjs/swagger';
 import { DigimonDto } from './digimon.dto';
 
-export class DigimonNameDto extends PickType(DigimonDto, ['name']) {}
+export class DigimonNameDto extends PickType(DigimonDto, ['name'] as const) {}

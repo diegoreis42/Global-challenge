@@ -15,6 +15,14 @@ export class DigimonRepository {
     return this.digimonRepository.findOne({ where: { name: digimonName } });
   }
 
+  findPartialByName(searchName: string) {
+    return this.digimonRepository
+      .createQueryBuilder('digimon')
+      .where('digimon.name ILIKE :searchName', {
+        searchName: `${searchName}`,
+      }).getMany();
+  }
+
   findAll(): Promise<Digimon[]> {
     return this.digimonRepository.find();
   }

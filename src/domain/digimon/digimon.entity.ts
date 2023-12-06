@@ -1,9 +1,10 @@
-import { Column, Entity, PrimaryColumn } from 'typeorm';
+import { Column, Entity, Index, PrimaryColumn } from 'typeorm';
 import { DigimonLevelsEnum } from './enums';
 
 @Entity()
 export class Digimon {
   @PrimaryColumn('varchar')
+  @Index({ fulltext: true })
   name: string;
 
   @Column('varchar')
